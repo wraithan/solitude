@@ -11,6 +11,8 @@ class Buyer(Model):
     pin = HashField(blank=True, null=True)
     pin_confirmed = models.BooleanField(default=False)
     active = models.BooleanField(default=True, db_index=True)
+    new_pin = HashField(blank=True, null=True)
+    reset_flag = models.BooleanField(default=False)
 
     class Meta(Model.Meta):
         db_table = 'buyer'
